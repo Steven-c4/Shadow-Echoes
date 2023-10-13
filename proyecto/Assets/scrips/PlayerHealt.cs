@@ -6,8 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth = 100f;
     public Slider healthSlider; // Referencia al Slider de la barra de vida en el Inspector.
-    public GameObject pausePanel;
-    public Button pauseButton;
+
 
     public float damageAmount = 10f; // Cantidad de daño al presionar la tecla "F"
 
@@ -47,10 +46,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        // Aquí puedes implementar lo que sucede cuando el jugador muere.
-        // Por ejemplo, cargar una pantalla de "Game Over" o reiniciar el nivel.
+        // Implementar animacion de muerte
 
-        // Desactiva el GameObject del personaje para que no pueda moverse.
         gameObject.SetActive(false);
     }
 }
