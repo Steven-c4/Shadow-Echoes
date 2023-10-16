@@ -7,24 +7,41 @@ public class CombateCaC : MonoBehaviour
     [SerializeField] private Transform controladorGolpe;
     [SerializeField] private float radioGolpe;
     [SerializeField] private float dañoGolpe;
+    [SerializeField] private float tiempoEntreAtaques;
+    [SerializeField] private float tiempoSiguienteAtaque;
+
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (tiempoEntreAtaques > 0)
+        {
+            tiempoSiguienteAtaque -= Time.deltaTime;
+        }
+
+        // Cambia Input.GetButtonDown("Fire1") por Input.GetKeyDown(KeyCode.X)
+        if (Input.GetKeyDown(KeyCode.X) && tiempoSiguienteAtaque <= 0)
         {
             Golpe();
+            tiempoSiguienteAtaque = tiempoEntreAtaques;
         }
     }
 
     private void Golpe()
     {
+        animator.SetTrigger("Golpe");
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, radioGolpe);
 
-        foreach (Collider2D colisonador in objetos)
+        foreach (Collider2D colisionador in objetos)
         {
-            if (colisonador.CompareTag("Enemigo"))
+            if (colisionador.CompareTag("Enemigo"))
             {
-                colisonador.transform.GetComponent<Enemigo>().TomarDaño(dañoGolpe);
+                colisionador.transform.GetComponent<Enemigo>().TomarDaño(dañoGolpe);
             }
         }
     }

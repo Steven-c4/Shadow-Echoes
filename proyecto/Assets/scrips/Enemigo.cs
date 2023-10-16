@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
-   [SerializeField] private float vida;
+    public float vida; // Variable de vida accesible desde otros scripts
+    private Animator animator;
 
-   private Animator animator;
-
-   private void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
@@ -22,7 +19,6 @@ public class Enemigo : MonoBehaviour
             Muerte();
         }
     }
-
 
     private void Muerte()
     {
