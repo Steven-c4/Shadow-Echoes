@@ -12024,16 +12024,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 39, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 15
-      m_TileSpriteIndex: 16
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 12
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 40, y: 6, z: 0}
     second:
       serializedVersion: 2
@@ -15136,7 +15126,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 49bccaff9d89cf94b86cc8a86edf9e54, type: 2}
-  - m_RefCount: 778
+  - m_RefCount: 777
     m_Data: {fileID: 11400000, guid: 1b3670b0c1f1917479b34ac32c386235, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -15185,7 +15175,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 12
     m_Data: {fileID: -791651345, guid: f75079d5ba86db94d8d9ba28072773cb, type: 3}
-  - m_RefCount: 778
+  - m_RefCount: 777
     m_Data: {fileID: -369287721, guid: f75079d5ba86db94d8d9ba28072773cb, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -15202,7 +15192,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -2095352296, guid: f75079d5ba86db94d8d9ba28072773cb, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1448
+  - m_RefCount: 1447
     m_Data:
       e00: 1
       e01: 0
@@ -15245,7 +15235,7 @@ Tilemap:
     m_Data: {r: 3.8079e-41, g: 3.8079e-41, b: 3.8079e-41, a: 3.8079e-41}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
-  - m_RefCount: 1448
+  - m_RefCount: 1447
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -16020,6 +16010,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579219412}
   m_CullTransparentMesh: 1
+--- !u!1 &683637416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683637417}
+  m_Layer: 0
+  m_Name: ControladorAtaque
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &683637417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683637416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1229681986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686838036
 GameObject:
   m_ObjectHideFlags: 0
@@ -16563,6 +16584,7 @@ GameObject:
   - component: {fileID: 788384679}
   - component: {fileID: 788384680}
   - component: {fileID: 788384681}
+  - component: {fileID: 788384682}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -16741,6 +16763,19 @@ MonoBehaviour:
   "da\xF1oGolpe": 25
   tiempoEntreAtaques: 0.5
   tiempoSiguienteAtaque: 0
+--- !u!114 &788384682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788384670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf09e218885994468bd947a68791404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
 --- !u!1 &792504943
 GameObject:
   m_ObjectHideFlags: 0
@@ -17904,6 +17939,7 @@ GameObject:
   - component: {fileID: 1229681990}
   - component: {fileID: 1229681991}
   - component: {fileID: 1229681992}
+  - component: {fileID: 1229681993}
   m_Layer: 0
   m_Name: enemigo
   m_TagString: Enemigo
@@ -17996,7 +18032,8 @@ Transform:
   m_LocalPosition: {x: 947.48, y: 613.42, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 683637417}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229681988
@@ -18014,6 +18051,7 @@ MonoBehaviour:
   speed: 3
   minDistance: 2.3
   player: {fileID: 788384672}
+  enemigo: {fileID: 1229681989}
 --- !u!114 &1229681989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18103,6 +18141,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   tiempoDesaparicion: 5
+--- !u!114 &1229681993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229681982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c308a503366dd48b74dc64fc38a5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorGolpe: {fileID: 683637417}
+  radioGolpe: 2
+  "da\xF1oGolpe": 25
 --- !u!1 &1326372446
 GameObject:
   m_ObjectHideFlags: 0
